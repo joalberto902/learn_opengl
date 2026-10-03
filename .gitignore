@@ -1,0 +1,50 @@
+# Strategy: ignore everything, then explicitly allow what matters.
+# Anything not listed below (binaries, profiles, logs, editor files) stays out.
+
+# 1. Ignore everything
+*
+
+# 2. Allow directories so Git can look inside them
+!*/
+
+# 3. Go source and module files
+!*.go
+!go.mod
+!go.sum
+!go.work
+!go.work.sum
+
+# 4. Game assets
+!*.vert
+!*.frag
+!*.glsl
+!*.png
+
+# 5. Docs, README media, and project config
+!*.md
+!*.gif
+!LICENSE
+!Makefile
+!*.yml
+!*.yaml
+!.gitignore
+!.gitattributes
+
+# 6. Re-ignore build output folders (overrides the allow rules above)
+bin/
+dist/
+build/
+vendor/
+
+# 7. Explicit binary and artifact patterns (safety net, mostly redundant)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.a
+*.o
+*.test
+*.out
+*.prof
+*.pprof
